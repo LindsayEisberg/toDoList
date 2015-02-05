@@ -3,11 +3,12 @@ var templates = {};
 
 templates.toDo = [
 '<article data-itemid="<%= _id %>">',
-'<h3><%= title %></h3>',
+'<li><h3><%= title %><h3>',
 '<div class="tempBtns">',
-'<button class="deleteItem">Delete</button>',
-'<button class="showEditItem">Edit</button>',
+'<a class="deleteItem" href="">Delete</a>',
+'<a class="showEditItem" href="">Edit</a>',
 '</div>',
+'</li>',
 '<form class ="editItem" action="">',
 '<input type="text" name="editTitle" value="<%= title %>">',
 '<button type="submit" class="btn btn-primary">Edit Item</button>',

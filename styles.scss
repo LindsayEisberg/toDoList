@@ -2,18 +2,17 @@ $head-font: "bree-serif",sans-serif;
 $list-font:  "franklin-gothic-urw-cond",sans-serif;
 
 
+body, h1, h2, h3, h4, h5, h6, a, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 article img {
   max-width: 300px;
 }
 
-.editItem {
-  display: none;
-}
-
-
-.show {
- display: block;
-
+li {
+  list-style-type: none;
 }
 
 h1 {
@@ -35,5 +34,28 @@ h3, .tempBtns {
 }
 
 .tempBtns {
-  float: right;
+float: right;
+}
+
+a {
+  text-decoration: none;
+  font-family: $list-font;
+  font-size: 20px;
+  padding-right: 20px;
+  color: black;
+  &:hover {
+    color: red;
+    text-decoration: none;
+  }
+}
+
+
+.editItem {
+  display: none;
+}
+
+
+.show {
+ display: block;
+
 }

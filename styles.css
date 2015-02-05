@@ -1,11 +1,12 @@
+body, h1, h2, h3, h4, h5, h6, a, ul, li {
+  margin: 0;
+  padding: 0; }
+
 article img {
   max-width: 300px; }
 
-.editItem {
-  display: none; }
-
-.show {
-  display: block; }
+li {
+  list-style-type: none; }
 
 h1 {
   text-align: center;
@@ -20,3 +21,19 @@ h3, .tempBtns {
 
 .tempBtns {
   float: right; }
+
+a {
+  text-decoration: none;
+  font-family: "franklin-gothic-urw-cond", sans-serif;
+  font-size: 20px;
+  padding-right: 20px;
+  color: black; }
+  a:hover {
+    color: red;
+    text-decoration: none; }
+
+.editItem {
+  display: none; }
+
+.show {
+  display: block; }
