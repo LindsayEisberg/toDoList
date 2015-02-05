@@ -1,14 +1,22 @@
-
 article img {
-  max-width: 300px;
-}
+  max-width: 300px; }
 
 .editItem {
-  display: none;
-}
-
+  display: none; }
 
 .show {
- display: block;
+  display: block; }
 
-}
+h1 {
+  text-align: center;
+  font-family: "bree-serif", sans-serif; }
+
+h3 {
+  font-family: "franklin-gothic-urw-cond", sans-serif; }
+
+h3, .tempBtns {
+  display: inline;
+  vertical-align: top; }
+
+.tempBtns {
+  float: right; }

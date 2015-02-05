@@ -24,7 +24,7 @@ var toDo = {
       event.preventDefault();
       var toDoList = $(this).closest('article').data('idItem');
       var editedItem = {
-        Item: $(this).find('input[name="editToDo"]').val(),
+        Item: $(this).find('input[name="editTitle"]').val(),
 
       };
 

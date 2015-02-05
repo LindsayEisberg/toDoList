@@ -1,0 +1,39 @@
+$head-font: "bree-serif",sans-serif;
+$list-font:  "franklin-gothic-urw-cond",sans-serif;
+
+
+article img {
+  max-width: 300px;
+}
+
+.editItem {
+  display: none;
+}
+
+
+.show {
+ display: block;
+
+}
+
+h1 {
+  text-align: center;
+  font-family: $head-font;
+
+}
+
+
+h3 {
+  font-family: $list-font;
+}
+
+//BUTTONS
+
+h3, .tempBtns {
+  display: inline;
+  vertical-align: top;
+}
+
+.tempBtns {
+  float: right;
+}

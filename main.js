@@ -15,20 +15,21 @@ var toDo = {
 
   initEvents: function(){
 
-    $('.editToDoItem').on('click', '.showEditItem', function(event){
+    $('section').on('click', '.showEditItem', function(event){
       event.preventDefault();
-      $(this).find('.editItem').toggleClass('show');
+      $(this).closest('article').find('.editItem').toggleClass('show');
     });
 
-    $('.editItem').on('submit', function (event){
+    $('.inputs').on('submit', '.editItem', function (event){
       event.preventDefault();
-      var bookId = $(this).closest('article').data('itemid');
+      var itemId = $(this).closest('article').data('itemid');
       var editedItem = {
         title: $(this).find('input[name="editTitle"]').val()
       };
 
-      toDo.updateItem(bookId, editedItem);
+      toDo.updateItem(itemId, editedItem);
     });
+
 
     $('.createItem').on('submit', function(event){
       event.preventDefault();
@@ -38,7 +39,7 @@ var toDo = {
       toDo.createItem(newItem);
     });
 
-    $('.deleteBook').on('click', function (event){
+    $('section').on('click', '.deleteItem', function (event){
       event.preventDefault();
       var bookId = $(this).closest('article').data('itemid');
       toDo.deleteItem(bookId);
@@ -106,11 +107,11 @@ var toDo = {
     });
   },
 
-  updateItem: function(itemId, updatedItem) {
+  updateItem: function(itemId, editedItem) {
     $.ajax({
       url: toDo.config.url + "/" + itemId,
       type: 'PUT',
-      data: updatedItem,
+      data: editedItem,
       success: function(data) {
         console.log(data);
         toDo.renderItem();
