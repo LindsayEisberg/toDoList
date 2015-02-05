@@ -1,0 +1,14 @@
+
+article img {
+  max-width: 300px;
+}
+
+.editItem {
+  display: none;
+}
+
+
+.show {
+ display: block;
+
+}
