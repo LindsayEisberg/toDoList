@@ -1,8 +1,10 @@
-$(document).ready(function(){
-  toDo.init();
-});
+
 
 var toDo = {
+
+  config: {
+    url: 'http://tiy-fee-rest.herokuapp.com/collections/lindsayeisberg',
+  },
 
   init: function(){
     toDo.initStyling();
@@ -15,47 +17,70 @@ var toDo = {
 
   initEvents: function(){
 
-    $('section').on('click', '.showEditItem', function(event){
-      event.preventDefault();
-      $(this).closest('article').find('.editItem').toggleClass('show');
-    });
 
-    $('.inputs').on('submit', '.editItem', function (event){
-      event.preventDefault();
-      var itemId = $(this).closest('article').data('itemid');
-      var editedItem = {
-        title: $(this).find('input[name="editTitle"]').val()
-      };
+//EDIT TASK
+    // $('section').on('click', '.showEditItem', function(event){
+    //   event.preventDefault();
+    //   $(this).closest('article').find('.editItem').toggleClass('show');
+    // });
 
-      toDo.updateItem(itemId, editedItem);
-    });
+  $('section').on('dblclick', '.showEditItem', function (event){
+    event.preventDefault();
+    $(this).closest('article').find('.editItem').toggleClass('show');
+    var itemId = $(this).closest('article').data('itemid');
+    var newInput = ('<input type="text" class="' + $(this).attr("update") + '" name="newTitle" placeholder="Edit Item Here">');
+    var newItem = {
+      title: $('h3').replaceWith(newInput)
+    };
+  });
 
+
+//   $('.editItem').on('submit', function(event){
+//       event.preventDefault();
+//     };
+
+$('.inputs').on('submit', '.editItem', function (event){
+  event.preventDefault();
+  var itemId = $(this).closest('article').data('itemid');
+  var editedItem = {
+    title: $(this).find('input[name="newTitle"]').val()
+  };
+
+  toDo.updateItem(itemId, editedItem);
+});
+
+
+
+
+    //Inline Edit
+
+
+
+  //CREATE NEW TASK//
 
     $('.createItem').on('submit', function(event){
       event.preventDefault();
         var newItem = {
           title: $(this).find('input[name="newTitle"]').val()
+
         };
       toDo.createItem(newItem);
     });
-
+  //
+  //DELETE TASK//
     $('section').on('click', '.deleteItem', function (event){
       event.preventDefault();
-      var bookId = $(this).closest('article').data('itemid');
-      toDo.deleteItem(bookId);
-
+      var taskId = $(this).closest('article').data('itemid');
+      toDo.deleteItem(taskId);
+  //
     });
+
+    // $('.completeItem').on('click', 'button', function (event){
+    //   event.preventDefault();
+    //   $(this).closest('article').find('h3').toggleClass('complete');
+    //   });
   },
 
-    config: {
-      url: 'http://tiy-fee-rest.herokuapp.com/collections/lindsayeisberg',
-    },
-
-  render: function(template, data, $el) {
-    var markup = _.template(template, data);
-
-    $el.append(template);
-  },
 
   renderItem: function() {
     $.ajax({
@@ -68,7 +93,8 @@ var toDo = {
           markup += template(item);
         });
         console.log('markup is...', markup);
-        $('.inputs').html(markup);
+        $('section').html(markup);
+        //this is where I will add the completed tasks and amount of items left based on length
       },
       error: function (err) {
         console.log(err);
@@ -115,10 +141,24 @@ var toDo = {
       success: function(data) {
         console.log(data);
         toDo.renderItem();
+        //
       },
+
       error: function(err) {
         console.log(err);
       }
     });
   }
 };
+
+
+
+
+$(document).ready(function(){
+  toDo.init();
+
+
+  // toDo.deleteItem('54da38c099ad1e030000001c');
+  // toDo.deleteItem('54da3a1d99ad1e030000001e');
+
+});

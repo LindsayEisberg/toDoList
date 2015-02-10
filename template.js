@@ -3,17 +3,27 @@ var templates = {};
 
 templates.toDo = [
 '<article data-itemid="<%= _id %>">',
-'<li><h3><%= title %><h3>',
+'<h3 class="showEditItem"><%= title %></h3>',
 '<div class="tempBtns">',
 '<a class="deleteItem" href="">Delete</a>',
 '<a class="showEditItem" href="">Edit</a>',
 '</div>',
-'</li>',
-'<form class ="editItem" action="">',
-'<input type="text" name="editTitle" value="<%= title %>">',
+'<div class="editItem">',
 '<button type="submit" class="btn btn-primary">Edit Item</button>',
-'</form>',
+'</div>',
 '</article>'
 
 
 ].join("");
+
+
+//<i class="fa fa-times"></i>
+//REMOVE
+
+//<i class="fa fa-pencil"></i>
+//edit
+
+//<i class="fa fa-check"></i>
+//checkmark
+
+//

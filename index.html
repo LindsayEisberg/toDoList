@@ -9,33 +9,39 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="list">
+            <h1>To Do List</h1>
+            <!--New To Do List Item-->
+            <div class="top">
+              <form action="" class="createItem">
+                <input type="text" class="newListItem" name="newTitle" placeholder="Things To Do">
+                <button type="submit" class='btn btn-primary'>Add Item</button>
+              </form>
+            </div>
+            <!--End to Do List Inputs-->
 
-      </div>
-      <div class="col-md-4">
-        <h1>To Do List</h1>
-        <section>
-          <article class="top">
-            <form action="" class="createItem">
-              <input type="text" class="newToDo" name="newTitle" placeholder="Things to Do">
-              <button type="submit" class="btn btn-primary">Add Item</button>
-            </form>
-          </article>
-          <ul class="inputs">
+            <!--To Do List Tasks-->
+            <div class="itemList">
+              <section class="inputs">
+                <!--Items will be listd here-->
+              </section>
+            </div><!-- end itemList-->
+            <div class="controls">
+              <!--All, Completed, Active tabs will be-->
+            </div>
+          </div><!--end list-->
+        </div><!--To Do List ends-->
+        <div class="col-md-4"></div>
 
-          </ul>
-        </section>
-      <div class="col-md-4">
-
-      </div>
-    </div>
-  </div>
-<footer>
-
-</footer>
-
+    </div><!--End row-->
+  </div><!--end container -->
+  <footer>
+  </footer>
 
 
   <script src="bower_components/jquery/dist/jquery.js"></script>

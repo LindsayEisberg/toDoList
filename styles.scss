@@ -26,6 +26,9 @@ h3 {
   font-family: $list-font;
 }
 
+.list {
+  margin-top: 20%;
+}
 //BUTTONS
 
 h3, .tempBtns {
@@ -47,8 +50,22 @@ a {
     color: red;
     text-decoration: none;
   }
+  &:visited {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    color: black;
+  }
 }
 
+.complete {
+  text-decoration: line-through;
+}
+
+
+
+//JQUERY
 
 .editItem {
   display: none;
