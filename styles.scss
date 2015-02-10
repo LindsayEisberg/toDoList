@@ -29,15 +29,24 @@ h3 {
 .list {
   margin-top: 20%;
 }
-//BUTTONS
 
-h3, .tempBtns {
+
+h3 {
   display: inline;
-  vertical-align: top;
+  vertical-align: super;
+  line-height: 2em;
 }
 
-.tempBtns {
-float: right;
+
+.updateListItem {
+  vertical-align: super;
+  width: 60%;
+  height: 28px;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
@@ -62,7 +71,10 @@ a {
 .complete {
   text-decoration: line-through;
 }
-
+//BUTTONS
+.editItem {
+  text-align: left;
+}
 
 
 //JQUERY

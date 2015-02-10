@@ -19,40 +19,24 @@ var toDo = {
 
 
 //EDIT TASK
-    // $('section').on('click', '.showEditItem', function(event){
-    //   event.preventDefault();
-    //   $(this).closest('article').find('.editItem').toggleClass('show');
-    // });
 
-  $('section').on('dblclick', '.showEditItem', function (event){
+
+  $('section').on('dblclick', '.listItem', function (event){
     event.preventDefault();
-    $(this).closest('article').find('.editItem').toggleClass('show');
-    var itemId = $(this).closest('article').data('itemid');
-    var newInput = ('<input type="text" class="' + $(this).attr("update") + '" name="newTitle" placeholder="Edit Item Here">');
-    var newItem = {
-      title: $('h3').replaceWith(newInput)
-    };
+    $(this).closest('.listItem').replaceWith('<input type="text" class="updateListItem" name="updateListItem"</input>');
+
+    $('.editItem').show()
   });
 
+  $('.inputs').on('click', '#editedItem', function (event) {
+    event.preventDefault();
+    var itemId = $('.updateListItem').closest('article').data('itemid');
+    var editedListItem = {
+      title: $('.updateListItem').val()
+    }
+    toDo.updateItem(itemId, editedListItem);
 
-//   $('.editItem').on('submit', function(event){
-//       event.preventDefault();
-//     };
-
-$('.inputs').on('submit', '.editItem', function (event){
-  event.preventDefault();
-  var itemId = $(this).closest('article').data('itemid');
-  var editedItem = {
-    title: $(this).find('input[name="newTitle"]').val()
-  };
-
-  toDo.updateItem(itemId, editedItem);
-});
-
-
-
-
-    //Inline Edit
+  });
 
 
 
@@ -80,7 +64,8 @@ $('.inputs').on('submit', '.editItem', function (event){
     //   $(this).closest('article').find('h3').toggleClass('complete');
     //   });
   },
-
+  // '<a class="deleteItem" href=""><i class="fa fa-times"></i></a>',
+  // '<a class="showEditItem" href="">Edit</a>',fa fa-pencil
 
   renderItem: function() {
     $.ajax({

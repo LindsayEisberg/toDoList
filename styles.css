@@ -18,12 +18,19 @@ h3 {
 .list {
   margin-top: 20%; }
 
-h3, .tempBtns {
+h3 {
   display: inline;
-  vertical-align: top; }
+  vertical-align: super;
+  line-height: 1em; }
 
-.tempBtns {
-  float: right; }
+.updateListItem {
+  vertical-align: super;
+  width: 60%;
+  height: 28px; }
+
+article {
+  display: flex;
+  justify-content: space-between; }
 
 a {
   text-decoration: none;
@@ -42,6 +49,9 @@ a {
 
 .complete {
   text-decoration: line-through; }
+
+.editItem {
+  text-align: left; }
 
 .editItem {
   display: none; }
