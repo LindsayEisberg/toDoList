@@ -1,0 +1,139 @@
+
+
+body, h1, h2, h3, h4, h5, h6, a, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+article img {
+  max-width: 300px;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: $head-font;
+  margin-bottom: 20px;
+
+}
+
+
+.list {
+  margin-top: 20%;
+}
+
+
+h3 {
+  font-family: $list-font;
+  padding-right: 22px;
+  display: inline;
+  vertical-align: super;
+  line-height: 1.7em;
+}
+
+h4 {
+  padding-top: 30px;
+  color: $item-count-color;
+  font-weight: 300;
+  font-family: $list-font;
+}
+
+.newListItem {
+  width: 70%;
+  height: 33px;
+  border: 6px double #e5e5e5;
+}
+
+.updateListItem {
+  @extend .newListItem;
+  vertical-align: super;
+  border: 1px solid #e5e5e5;
+  margin-left: -10px;
+}
+
+
+.toDoLineItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  font-family: $list-font;
+  font-size: 20px;
+  padding-right: 20px;
+  color: black;
+  &:hover {
+    color: $accent-color;
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.createItem {
+  margin-bottom: 20px;
+}
+
+//BUTTONS
+.editItem {
+  text-align: center;
+
+}
+
+.complete {
+  text-decoration: line-through;
+  color: $item-count-color;
+
+}
+
+#submitBtn {
+  background-color: $accent-color;
+  border-radius: 0px;
+  border-color: #e5e5e5;
+}
+
+#editedItem {
+  @extend #submitBtn;
+  width: 70.5%;
+  margin-left: -3px;
+}
+
+#completeAll{
+  float: right;
+  color: $item-count-color;
+  a {
+    color: $item-count-color;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.fa-2x {
+font-size: 1.5em;
+&:hover {
+  color: $accent-color;
+  }
+}
+
+
+//JQUERY
+
+.editItem {
+  display: none;
+}
+
+
+.show {
+ display: block;
+
+}

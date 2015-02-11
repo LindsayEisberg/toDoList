@@ -24,15 +24,15 @@ var toDo = {
   $('section').on('dblclick', '.listItem', function (event){
     event.preventDefault();
     $(this).closest('.listItem').replaceWith('<input type="text" class="updateListItem" name="updateListItem"</input>');
-
-    $('.editItem').show()
+    $('.updateListItem').parent().siblings('.editItem').addClass('show');
   });
 
   $('.inputs').on('click', '#editedItem', function (event) {
     event.preventDefault();
     var itemId = $('.updateListItem').closest('article').data('itemid');
     var editedListItem = {
-      title: $('.updateListItem').val()
+      title: $('.updateListItem').val(),
+      complete: false
     }
     toDo.updateItem(itemId, editedListItem);
 
@@ -45,7 +45,8 @@ var toDo = {
     $('.createItem').on('submit', function(event){
       event.preventDefault();
         var newItem = {
-          title: $(this).find('input[name="newTitle"]').val()
+          title: $(this).find('input[name="newTitle"]').val(),
+          complete: false,
 
         };
       toDo.createItem(newItem);
@@ -59,13 +60,25 @@ var toDo = {
   //
     });
 
-    // $('.completeItem').on('click', 'button', function (event){
-    //   event.preventDefault();
-    //   $(this).closest('article').find('h3').toggleClass('complete');
-    //   });
+
+
+    $('section').on('click', '.completeItem', function(event){
+      event.preventDefault();
+      $(this).parent().siblings('h3').toggleClass('complete')
+
+    });
+
+//Delete All Items
+  $('#completeAll').on('click', function(event){
+    event.preventDefault();
+    $(this).parent().parent().siblings().children().children().children('h3').toggleClass('complete')    });
+
+
   },
-  // '<a class="deleteItem" href=""><i class="fa fa-times"></i></a>',
-  // '<a class="showEditItem" href="">Edit</a>',fa fa-pencil
+
+
+
+
 
   renderItem: function() {
     $.ajax({
@@ -79,6 +92,11 @@ var toDo = {
         });
         console.log('markup is...', markup);
         $('section').html(markup);
+        var count = $('.listItem').length;
+        $('#itemCount').html(count);
+        // if($('.listItem').hasClass('complete')) {
+        //   $(this).length === 0;
+        // }
         //this is where I will add the completed tasks and amount of items left based on length
       },
       error: function (err) {
@@ -86,6 +104,7 @@ var toDo = {
       }
     });
   },
+
 
   createItem: function(newItem) {
     $.ajax({
@@ -118,6 +137,7 @@ var toDo = {
     });
   },
 
+
   updateItem: function(itemId, editedItem) {
     $.ajax({
       url: toDo.config.url + "/" + itemId,
@@ -141,6 +161,9 @@ var toDo = {
 
 $(document).ready(function(){
   toDo.init();
+
+
+
 
 
   // toDo.deleteItem('54da38c099ad1e030000001c');

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 
   <script src="//use.typekit.net/ixa7izb.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -22,7 +22,7 @@
             <div class="top">
               <form action="" class="createItem">
                 <input type="text" class="newListItem" name="newTitle" placeholder="Things To Do">
-                <button type="submit" class='btn btn-primary'>Add Item</button>
+                <button type="submit" id="submitBtn" class='btn btn-primary'>Add Item</button>
               </form>
             </div>
             <!--End to Do List Inputs-->
@@ -32,7 +32,10 @@
               <section class="inputs">
                 <!--Items will be listd here-->
               </section>
-            </div><!-- end itemList-->
+              <div class="itemsCompleted">
+                <h4><span id="itemCount">0</span> Items Left to Complete<span id="completeAll"><a href="#">Complete All</a></span></h4>
+                </div>
+              </div><!-- end itemList-->
             <div class="controls">
               <!--All, Completed, Active tabs will be-->
             </div>
