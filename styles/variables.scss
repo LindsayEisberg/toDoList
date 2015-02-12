@@ -2,3 +2,16 @@ $head-font: "bree-serif",sans-serif;
 $list-font:  "franklin-gothic-urw-cond",sans-serif;
 $item-count-color: #B5B2B2;
 $accent-color: #e95644;
+
+
+@mixin shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin transition ($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+}

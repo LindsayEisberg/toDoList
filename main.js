@@ -71,9 +71,18 @@ var toDo = {
 //Delete All Items
   $('#completeAll').on('click', function(event){
     event.preventDefault();
-    $(this).parent().parent().siblings().children().children().children('h3').toggleClass('complete')    });
+    $(this).parent().parent().siblings().children().children().children('h3').toggleClass('complete')
+    });
 
-
+  //
+  //   var countDown = $('.listItem').length;
+  //   if($('.listItem').hasClass('complete')) {
+  //     countDown - 1;
+  //   }
+  //   else {
+  //     console.log('item is not complete');
+  //   }
+  //
   },
 
 
@@ -94,9 +103,7 @@ var toDo = {
         $('section').html(markup);
         var count = $('.listItem').length;
         $('#itemCount').html(count);
-        // if($('.listItem').hasClass('complete')) {
-        //   $(this).length === 0;
-        // }
+
         //this is where I will add the completed tasks and amount of items left based on length
       },
       error: function (err) {

@@ -29,6 +29,15 @@ h4 {
   font-weight: 300;
   font-family: "franklin-gothic-urw-cond", sans-serif; }
 
+.list {
+  border: 2px solid #e5e5e5;
+  border-top: 0px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 9px 2px -3px #bdbbbd;
+  -moz-box-shadow: 4px 9px 2px -3px #bdbbbd;
+  box-shadow: 4px 9px 2px -3px #bdbbbd;
+  padding: 20px 20px 40px 30px; }
+
 .newListItem, .updateListItem {
   width: 70%;
   height: 33px;
@@ -51,7 +60,10 @@ a {
   color: black; }
   a:hover {
     color: #e95644;
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease; }
   a:visited {
     text-decoration: none; }
   a:focus {
@@ -88,10 +100,20 @@ a {
 .fa-2x {
   font-size: 1.5em; }
   .fa-2x:hover {
-    color: #e95644; }
+    color: #e95644;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease; }
 
 .editItem {
   display: none; }
 
 .show {
   display: block; }
+
+@media screen and (min-width: 892px) {
+  .container {
+    width: 100%;
+    padding-right: 0; }
+  .list {
+    min-width: 360px; } }
